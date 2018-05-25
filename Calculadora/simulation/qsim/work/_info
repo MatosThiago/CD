@@ -1,0 +1,165 @@
+m255
+K3
+13
+cModel Technology
+Z0 dE:\Documentos\UNB\Disciplinas\Disciplinas\CD\Projeto Final\simulation\qsim
+vAdder
+Z1 I]e;ELKDjL08l7d::FW9W31
+Z2 VAAFN:>3b9cz1aMkQHS2631
+Z3 dE:\Documentos\UNB\Disciplinas\Disciplinas\CD\Projeto Final\simulation\qsim
+Z4 w1527216154
+Z5 8Calculadora.vo
+Z6 FCalculadora.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|Calculadora.vo|
+Z9 o-work work -O0
+Z10 n@adder
+Z11 !s100 87k_aMD=j]@UW`TY9MP6R2
+Z12 !s108 1527216155.682000
+Z13 !s107 Calculadora.vo|
+!i10b 1
+!s85 0
+!s101 -O0
+vAdder_vlg_check_tst
+Z14 IAglaIA60l_`KnC4Z<UZ4E3
+Z15 VKI91`zcjJH[MmfBGH6:IR2
+R3
+R4
+Z16 8Calculadora.vt
+Z17 FCalculadora.vt
+L0 61
+R7
+r1
+31
+Z18 !s108 1527216155.757000
+Z19 !s107 Calculadora.vt|
+Z20 !s90 -work|work|Calculadora.vt|
+R9
+Z21 n@adder_vlg_check_tst
+Z22 !s100 OzcW952=GoZSTi@oh;D5V0
+!i10b 1
+!s85 0
+!s101 -O0
+vAdder_vlg_sample_tst
+Z23 I;8m[]gDD3JDS<3VG6ZVjA0
+Z24 VRSGe7jATlEL4f3J5e]3Nl0
+R3
+R4
+R16
+R17
+L0 29
+R7
+r1
+31
+R18
+R19
+R20
+R9
+Z25 n@adder_vlg_sample_tst
+Z26 !s100 ePm]@Qj<0LFmNFEF^f0??0
+!i10b 1
+!s85 0
+!s101 -O0
+vAdder_vlg_vec_tst
+Z27 IePKSRkRgc>4G^cK8O[NTQ0
+Z28 V=L^jba2?K`l?=FF]dg`2U1
+R3
+R4
+R16
+R17
+Z29 L0 183
+R7
+r1
+31
+R18
+R19
+R20
+R9
+Z30 n@adder_vlg_vec_tst
+Z31 !s100 HOA[d`G<7mHE_Q]cV4I1Q2
+!i10b 1
+!s85 0
+!s101 -O0
+vFull_Adder_4_bits
+Z32 I1T7WE5<2BLoizHhLGWFMc3
+Z33 VlDc]T`I4j]mPL`f59g6k@0
+R3
+Z34 w1527218155
+R5
+R6
+L0 31
+R7
+r1
+31
+R8
+R9
+Z35 n@full_@adder_4_bits
+!i10b 1
+Z36 !s100 C^BX3U;1QchOT`NF^H_EU2
+!s85 0
+Z37 !s108 1527218156.096000
+R13
+!s101 -O0
+vFull_Adder_4_bits_vlg_check_tst
+!i10b 1
+!s100 o7OZm^>T[lSk1NGklzhV?0
+IfKeo21i443afzJ5LkAi;C3
+VEB]mibFSGMAk=mI4SBnzF2
+R3
+Z38 w1527218154
+R16
+R17
+L0 71
+R7
+r1
+!s85 0
+31
+Z39 !s108 1527218156.223000
+Z40 !s107 Calculadora.vt|
+R20
+!s101 -O0
+R9
+Z41 n@full_@adder_4_bits_vlg_check_tst
+vFull_Adder_4_bits_vlg_sample_tst
+!i10b 1
+Z42 !s100 AEnkFKdXb<lzgRDOQSdGd3
+Z43 Ii0`c[?^[:ee>W9MH3H>S;2
+Z44 V6z^gJmSo[^i3cD09KWcc=1
+R3
+R38
+R16
+R17
+L0 29
+R7
+r1
+!s85 0
+31
+R39
+R40
+R20
+!s101 -O0
+R9
+Z45 n@full_@adder_4_bits_vlg_sample_tst
+vFull_Adder_4_bits_vlg_vec_tst
+!i10b 1
+!s100 dO`_AhTXDWlYO<Hmg[hML3
+IeZik:LIoR]81;OfbZ1Dd00
+Z46 VYB0aRPdl:NhKVzKdeQ@i?3
+R3
+R38
+R16
+R17
+Z47 L0 274
+R7
+r1
+!s85 0
+31
+R39
+R40
+R20
+!s101 -O0
+R9
+Z48 n@full_@adder_4_bits_vlg_vec_tst
