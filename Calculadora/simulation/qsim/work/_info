@@ -23,6 +23,26 @@ Z13 !s107 ULA.vo|
 !i10b 1
 !s85 0
 !s101 -O0
+v\4Bit_Multiplier 
+!i10b 1
+!s100 S0e6;=P_U=AUj:Be>zBhc0
+IYaTd]]7cnjD2[FIEOBKQ_3
+Vf4E0XP8HbiJ?aQAl8?U0I3
+dE:\Documentos\GIT\CD\Calculadora\simulation\qsim
+w1528161515
+R5
+R6
+L0 31
+R7
+r1
+!s85 0
+31
+!s108 1528161518.220000
+!s107 ULA.vo|
+R8
+!s101 -O0
+R9
+n@1344@bit_@multiplier@040
 vAdder
 Z14 I3koAE>Q?Lh_V:KPD381k62
 Z15 VAAFN:>3b9cz1aMkQHS2631
@@ -197,13 +217,12 @@ r1
 31
 R8
 R9
-!i10b 1
-!s85 0
 Z64 !s108 1527777141.051000
 R13
+!i10b 1
+!s85 0
 !s101 -O0
 vmux2_vlg_check_tst
-!i10b 1
 Z65 !s100 I^RfXI]bM[O1BNmc[<lO61
 Z66 IFFbU]ZTE50@aU[kGzY2<41
 Z67 VncQ9E:l8G1F2nAGL758Zc3
@@ -214,18 +233,18 @@ R24
 L0 61
 R7
 r1
-!s85 0
 31
 Z69 !s108 1527777141.136000
-Z70 !s107 ULA.vt|
+R26
 R27
-!s101 -O0
 R9
-vmux2_vlg_sample_tst
 !i10b 1
-Z71 !s100 NdEK7712lk=GfZdZWMTcW2
-Z72 I8770AdXH5R[l^dRJ?n4?10
-Z73 VnKO2PLAT5=XT=cT;Ck@m=2
+!s85 0
+!s101 -O0
+vmux2_vlg_sample_tst
+Z70 !s100 NdEK7712lk=GfZdZWMTcW2
+Z71 I8770AdXH5R[l^dRJ?n4?10
+Z72 VnKO2PLAT5=XT=cT;Ck@m=2
 R3
 R68
 R23
@@ -233,17 +252,16 @@ R24
 L0 29
 R7
 r1
-!s85 0
 31
 R69
-R70
+R26
 R27
-!s101 -O0
 R9
-vmux2_vlg_vec_tst
 !i10b 1
-!s100 KMI4CSU5Pn4z1E_RONdWP1
-I<L?:DZ`R=a63dVEJSOfWe3
+!s85 0
+!s101 -O0
+vmux2_vlg_vec_tst
+Z73 I<L?:DZ`R=a63dVEJSOfWe3
 Z74 V]<=FNP=>7aZb2eIUIYbSS0
 R3
 R68
@@ -252,10 +270,12 @@ R24
 Z75 L0 156
 R7
 r1
-!s85 0
 31
 R69
-R70
+R26
 R27
-!s101 -O0
 R9
+!i10b 1
+Z76 !s100 KMI4CSU5Pn4z1E_RONdWP1
+!s85 0
+!s101 -O0
