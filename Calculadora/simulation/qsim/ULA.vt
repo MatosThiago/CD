@@ -18,38 +18,24 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/04/2018 22:18:34"
+// Generated on "06/28/2018 18:29:05"
                                                                         
-// Verilog Self-Checking Test Bench (with test vectors) for design :    4Bit_Multiplier
+// Verilog Self-Checking Test Bench (with test vectors) for design :    ULA
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module 4Bit_Multiplier_vlg_sample_tst(
-	A0,
-	A1,
-	A2,
-	A3,
-	B0,
-	B1,
-	B2,
-	B3,
+module ULA_vlg_sample_tst(
+	SW,
 	sampler_tx
 );
-input  A0;
-input  A1;
-input  A2;
-input  A3;
-input  B0;
-input  B1;
-input  B2;
-input  B3;
+input [9:0] SW;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(A0 or A1 or A2 or A3 or B0 or B1 or B2 or B3)
+always @(SW)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -68,69 +54,27 @@ end
 assign sampler_tx = sample;
 endmodule
 
-module 4Bit_Multiplier_vlg_check_tst (
-	P0,
-	P1,
-	P2,
-	P3,
-	P4,
-	P5,
-	P6,
-	P7,
+module ULA_vlg_check_tst (
+	LEDR,
 	sampler_rx
 );
-input  P0;
-input  P1;
-input  P2;
-input  P3;
-input  P4;
-input  P5;
-input  P6;
-input  P7;
+input [7:0] LEDR;
 input sampler_rx;
 
-reg  P0_expected;
-reg  P1_expected;
-reg  P2_expected;
-reg  P3_expected;
-reg  P4_expected;
-reg  P5_expected;
-reg  P6_expected;
-reg  P7_expected;
+reg [7:0] LEDR_expected;
 
-reg  P0_prev;
-reg  P1_prev;
-reg  P2_prev;
-reg  P3_prev;
-reg  P4_prev;
-reg  P5_prev;
-reg  P6_prev;
-reg  P7_prev;
+reg [7:0] LEDR_prev;
 
-reg  P0_expected_prev;
-reg  P1_expected_prev;
-reg  P2_expected_prev;
-reg  P3_expected_prev;
-reg  P4_expected_prev;
-reg  P5_expected_prev;
-reg  P6_expected_prev;
-reg  P7_expected_prev;
+reg [7:0] LEDR_expected_prev;
 
-reg  last_P0_exp;
-reg  last_P1_exp;
-reg  last_P2_exp;
-reg  last_P3_exp;
-reg  last_P4_exp;
-reg  last_P5_exp;
-reg  last_P6_exp;
-reg  last_P7_exp;
+reg [7:0] last_LEDR_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:8] on_first_change ;
+reg [1:1] on_first_change ;
 
 
 initial
@@ -138,88 +82,74 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 8'b1;
+on_first_change = 1'b1;
 end
 
 // update real /o prevs
 
 always @(trigger)
 begin
-	P0_prev = P0;
-	P1_prev = P1;
-	P2_prev = P2;
-	P3_prev = P3;
-	P4_prev = P4;
-	P5_prev = P5;
-	P6_prev = P6;
-	P7_prev = P7;
+	LEDR_prev = LEDR;
 end
 
 // update expected /o prevs
 
 always @(trigger)
 begin
-	P0_expected_prev = P0_expected;
-	P1_expected_prev = P1_expected;
-	P2_expected_prev = P2_expected;
-	P3_expected_prev = P3_expected;
-	P4_expected_prev = P4_expected;
-	P5_expected_prev = P5_expected;
-	P6_expected_prev = P6_expected;
-	P7_expected_prev = P7_expected;
+	LEDR_expected_prev = LEDR_expected;
 end
 
 
 
-// expected P7
+// expected LEDR[7]
 initial
 begin
-	P7_expected = 1'bX;
+	LEDR_expected[7] = 1'bX;
 end 
 
-// expected P6
+// expected LEDR[6]
 initial
 begin
-	P6_expected = 1'bX;
+	LEDR_expected[6] = 1'bX;
 end 
 
-// expected P5
+// expected LEDR[5]
 initial
 begin
-	P5_expected = 1'bX;
+	LEDR_expected[5] = 1'bX;
 end 
 
-// expected P4
+// expected LEDR[4]
 initial
 begin
-	P4_expected = 1'bX;
+	LEDR_expected[4] = 1'bX;
 end 
 
-// expected P3
+// expected LEDR[3]
 initial
 begin
-	P3_expected = 1'bX;
+	LEDR_expected[3] = 1'bX;
 end 
 
-// expected P2
+// expected LEDR[2]
 initial
 begin
-	P2_expected = 1'bX;
+	LEDR_expected[2] = 1'bX;
 end 
 
-// expected P1
+// expected LEDR[1]
 initial
 begin
-	P1_expected = 1'bX;
+	LEDR_expected[1] = 1'bX;
 end 
 
-// expected P0
+// expected LEDR[0]
 initial
 begin
-	P0_expected = 1'bX;
+	LEDR_expected[0] = 1'bX;
 end 
 // generate trigger
-always @(P0_expected or P0 or P1_expected or P1 or P2_expected or P2 or P3_expected or P3 or P4_expected or P4 or P5_expected or P5 or P6_expected or P6 or P7_expected or P7)
+always @(LEDR_expected or LEDR)
 begin
 	trigger <= ~trigger;
 end
@@ -229,112 +159,112 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected P0 = %b | expected P1 = %b | expected P2 = %b | expected P3 = %b | expected P4 = %b | expected P5 = %b | expected P6 = %b | expected P7 = %b | ",P0_expected_prev,P1_expected_prev,P2_expected_prev,P3_expected_prev,P4_expected_prev,P5_expected_prev,P6_expected_prev,P7_expected_prev);
-	$display("| real P0 = %b | real P1 = %b | real P2 = %b | real P3 = %b | real P4 = %b | real P5 = %b | real P6 = %b | real P7 = %b | ",P0_prev,P1_prev,P2_prev,P3_prev,P4_prev,P5_prev,P6_prev,P7_prev);
+	$display("| expected LEDR = %b | ",LEDR_expected_prev);
+	$display("| real LEDR = %b | ",LEDR_prev);
 `endif
 	if (
-		( P0_expected_prev !== 1'bx ) && ( P0_prev !== P0_expected_prev )
-		&& ((P0_expected_prev !== last_P0_exp) ||
+		( LEDR_expected_prev[0] !== 1'bx ) && ( LEDR_prev[0] !== LEDR_expected_prev[0] )
+		&& ((LEDR_expected_prev[0] !== last_LEDR_exp[0]) ||
 			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P0 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P0_expected_prev);
-		$display ("     Real value = %b", P0_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
-		last_P0_exp = P0_expected_prev;
+		last_LEDR_exp[0] = LEDR_expected_prev[0];
 	end
 	if (
-		( P1_expected_prev !== 1'bx ) && ( P1_prev !== P1_expected_prev )
-		&& ((P1_expected_prev !== last_P1_exp) ||
-			on_first_change[2])
+		( LEDR_expected_prev[1] !== 1'bx ) && ( LEDR_prev[1] !== LEDR_expected_prev[1] )
+		&& ((LEDR_expected_prev[1] !== last_LEDR_exp[1]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P1 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P1_expected_prev);
-		$display ("     Real value = %b", P1_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_P1_exp = P1_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[1] = LEDR_expected_prev[1];
 	end
 	if (
-		( P2_expected_prev !== 1'bx ) && ( P2_prev !== P2_expected_prev )
-		&& ((P2_expected_prev !== last_P2_exp) ||
-			on_first_change[3])
+		( LEDR_expected_prev[2] !== 1'bx ) && ( LEDR_prev[2] !== LEDR_expected_prev[2] )
+		&& ((LEDR_expected_prev[2] !== last_LEDR_exp[2]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P2 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P2_expected_prev);
-		$display ("     Real value = %b", P2_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_P2_exp = P2_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[2] = LEDR_expected_prev[2];
 	end
 	if (
-		( P3_expected_prev !== 1'bx ) && ( P3_prev !== P3_expected_prev )
-		&& ((P3_expected_prev !== last_P3_exp) ||
-			on_first_change[4])
+		( LEDR_expected_prev[3] !== 1'bx ) && ( LEDR_prev[3] !== LEDR_expected_prev[3] )
+		&& ((LEDR_expected_prev[3] !== last_LEDR_exp[3]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P3 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P3_expected_prev);
-		$display ("     Real value = %b", P3_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[3] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_P3_exp = P3_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[3] = LEDR_expected_prev[3];
 	end
 	if (
-		( P4_expected_prev !== 1'bx ) && ( P4_prev !== P4_expected_prev )
-		&& ((P4_expected_prev !== last_P4_exp) ||
-			on_first_change[5])
+		( LEDR_expected_prev[4] !== 1'bx ) && ( LEDR_prev[4] !== LEDR_expected_prev[4] )
+		&& ((LEDR_expected_prev[4] !== last_LEDR_exp[4]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P4 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P4_expected_prev);
-		$display ("     Real value = %b", P4_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[4] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_P4_exp = P4_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[4] = LEDR_expected_prev[4];
 	end
 	if (
-		( P5_expected_prev !== 1'bx ) && ( P5_prev !== P5_expected_prev )
-		&& ((P5_expected_prev !== last_P5_exp) ||
-			on_first_change[6])
+		( LEDR_expected_prev[5] !== 1'bx ) && ( LEDR_prev[5] !== LEDR_expected_prev[5] )
+		&& ((LEDR_expected_prev[5] !== last_LEDR_exp[5]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P5 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P5_expected_prev);
-		$display ("     Real value = %b", P5_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[5] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[6] = 1'b0;
-		last_P5_exp = P5_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[5] = LEDR_expected_prev[5];
 	end
 	if (
-		( P6_expected_prev !== 1'bx ) && ( P6_prev !== P6_expected_prev )
-		&& ((P6_expected_prev !== last_P6_exp) ||
-			on_first_change[7])
+		( LEDR_expected_prev[6] !== 1'bx ) && ( LEDR_prev[6] !== LEDR_expected_prev[6] )
+		&& ((LEDR_expected_prev[6] !== last_LEDR_exp[6]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P6 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P6_expected_prev);
-		$display ("     Real value = %b", P6_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[6] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[7] = 1'b0;
-		last_P6_exp = P6_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[6] = LEDR_expected_prev[6];
 	end
 	if (
-		( P7_expected_prev !== 1'bx ) && ( P7_prev !== P7_expected_prev )
-		&& ((P7_expected_prev !== last_P7_exp) ||
-			on_first_change[8])
+		( LEDR_expected_prev[7] !== 1'bx ) && ( LEDR_prev[7] !== LEDR_expected_prev[7] )
+		&& ((LEDR_expected_prev[7] !== last_LEDR_exp[7]) ||
+			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port P7 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", P7_expected_prev);
-		$display ("     Real value = %b", P7_prev);
+		$display ("ERROR! Vector Mismatch for output port LEDR[7] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", LEDR_expected_prev);
+		$display ("     Real value = %b", LEDR_prev);
 		nummismatches = nummismatches + 1;
-		on_first_change[8] = 1'b0;
-		last_P7_exp = P7_expected_prev;
+		on_first_change[1] = 1'b0;
+		last_LEDR_exp[7] = LEDR_expected_prev[7];
 	end
 
 	trigger <= ~trigger;
@@ -352,182 +282,240 @@ $finish;
 end 
 endmodule
 
-module 4Bit_Multiplier_vlg_vec_tst();
+module ULA_vlg_vec_tst();
 // constants                                           
 // general purpose registers
-reg A0;
-reg A1;
-reg A2;
-reg A3;
-reg B0;
-reg B1;
-reg B2;
-reg B3;
+reg [9:0] SW;
 // wires                                               
-wire P0;
-wire P1;
-wire P2;
-wire P3;
-wire P4;
-wire P5;
-wire P6;
-wire P7;
+wire [7:0] LEDR;
 
 wire sampler;                             
 
 // assign statements (if any)                          
-4Bit_Multiplier i1 (
+ULA i1 (
 // port map - connection between master ports and signals/registers   
-	.A0(A0),
-	.A1(A1),
-	.A2(A2),
-	.A3(A3),
-	.B0(B0),
-	.B1(B1),
-	.B2(B2),
-	.B3(B3),
-	.P0(P0),
-	.P1(P1),
-	.P2(P2),
-	.P3(P3),
-	.P4(P4),
-	.P5(P5),
-	.P6(P6),
-	.P7(P7)
+	.LEDR(LEDR),
+	.SW(SW)
 );
 
-// A3
-always
+// SW[9]
+initial
 begin
-	A3 = 1'b0;
-	A3 = #800000 1'b1;
-	#200000;
+	SW[9] = 1'b0;
+	SW[9] = #800000 1'b1;
 end 
 
-// A2
-always
+// SW[8]
+initial
 begin
-	A2 = 1'b0;
-	A2 = #400000 1'b1;
-	A2 = #400000 1'b0;
-	#200000;
+	SW[8] = 1'b0;
+	SW[8] = #400000 1'b1;
+	SW[8] = #400000 1'b0;
 end 
 
-// A1
-always
+// SW[7]
+initial
 begin
-	A1 = 1'b0;
-	A1 = #200000 1'b1;
-	A1 = #200000 1'b0;
-	A1 = #200000 1'b1;
-	A1 = #200000 1'b0;
-	#200000;
-end 
-
-// A0
-always
-begin
-	A0 = 1'b0;
-	A0 = #100000 1'b1;
-	# 100000;
-	repeat(3)
+	repeat(2)
 	begin
-		A0 = 1'b0;
-		A0 = #100000 1'b1;
-		# 100000;
+		SW[7] = 1'b0;
+		SW[7] = #200000 1'b1;
+		# 200000;
 	end
-	A0 = 1'b0;
-	A0 = #100000 1'b1;
+	SW[7] = 1'b0;
+end 
+
+// SW[6]
+always
+begin
+	SW[6] = 1'b0;
+	SW[6] = #100000 1'b1;
 	#100000;
 end 
 
-// B3
-always
+// SW[3]
+initial
 begin
-	B3 = 1'b0;
-	B3 = #80000 1'b1;
-	# 80000;
-	repeat(5)
-	begin
-		B3 = 1'b0;
-		B3 = #80000 1'b1;
-		# 80000;
-	end
-	B3 = 1'b0;
-	#40000;
+	SW[3] = 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
+	SW[3] = #20000 1'b0;
+	SW[3] = #80000 1'b1;
 end 
 
-// B2
-always
+// SW[2]
+initial
 begin
-	B2 = 1'b0;
-	B2 = #40000 1'b1;
-	# 40000;
-	repeat(11)
-	begin
-		B2 = 1'b0;
-		B2 = #40000 1'b1;
-		# 40000;
-	end
-	B2 = 1'b0;
-	#40000;
+	SW[2] = 1'b0;
+	SW[2] = #40000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
+	SW[2] = #60000 1'b1;
+	SW[2] = #40000 1'b0;
 end 
 
-// B1
-always
+// SW[1]
+initial
 begin
-	B1 = 1'b0;
-	B1 = #20000 1'b1;
-	# 20000;
-	repeat(23)
+	repeat(2)
 	begin
-		B1 = 1'b0;
-		B1 = #20000 1'b1;
+		SW[1] = 1'b0;
+		SW[1] = #20000 1'b1;
 		# 20000;
 	end
-	B1 = 1'b0;
-	B1 = #20000 1'b1;
-	#20000;
+	SW[1] = 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #40000 1'b1;
+	SW[1] = #20000 1'b0;
+	SW[1] = #20000 1'b1;
+	SW[1] = #20000 1'b0;
 end 
 
-// B0
-always
+// SW[0]
+initial
 begin
-	B0 = 1'b0;
-	B0 = #10000 1'b1;
-	# 10000;
-	repeat(48)
+	repeat(5)
 	begin
-		B0 = 1'b0;
-		B0 = #10000 1'b1;
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
 		# 10000;
 	end
-	B0 = 1'b0;
-	B0 = #10000 1'b1;
-	#10000;
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
+	repeat(5)
+	begin
+		SW[0] = 1'b0;
+		SW[0] = #10000 1'b1;
+		# 10000;
+	end
 end 
 
-4Bit_Multiplier_vlg_sample_tst tb_sample (
-	.A0(A0),
-	.A1(A1),
-	.A2(A2),
-	.A3(A3),
-	.B0(B0),
-	.B1(B1),
-	.B2(B2),
-	.B3(B3),
+// SW[5]
+initial
+begin
+	SW[5] = 1'b0;
+end 
+
+// SW[4]
+initial
+begin
+	SW[4] = 1'b1;
+end 
+
+ULA_vlg_sample_tst tb_sample (
+	.SW(SW),
 	.sampler_tx(sampler)
 );
 
-4Bit_Multiplier_vlg_check_tst tb_out(
-	.P0(P0),
-	.P1(P1),
-	.P2(P2),
-	.P3(P3),
-	.P4(P4),
-	.P5(P5),
-	.P6(P6),
-	.P7(P7),
+ULA_vlg_check_tst tb_out(
+	.LEDR(LEDR),
 	.sampler_rx(sampler)
 );
 endmodule

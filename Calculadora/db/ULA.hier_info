@@ -1,34 +1,30 @@
 |ULA
-S0 <= muxS:inst5.F0
-OPT1 => muxS:inst5.OPT
-A0 => Coder:inst1.D0
-A1 => Coder:inst1.D1
-A2 => Coder:inst1.D2
-A3 => Coder:inst1.D3
-A4 => Coder:inst1.D4
-A5 => Coder:inst1.D5
-A6 => Coder:inst1.D6
-A7 => Coder:inst1.D7
-A8 => Coder:inst1.D8
-A9 => Coder:inst1.D9
-B0 => Coder:inst.D0
-B1 => Coder:inst.D1
-B2 => Coder:inst.D2
-B3 => Coder:inst.D3
-B4 => Coder:inst.D4
-B5 => Coder:inst.D5
-B6 => Coder:inst.D6
-B7 => Coder:inst.D7
-B8 => Coder:inst.D8
-B9 => Coder:inst.D9
-OPT0 => 4Bit_Adder-Subtractor:inst3.OPT
-S1 <= muxS:inst5.F1
-S2 <= muxS:inst5.F2
-S3 <= muxS:inst5.F3
-S4 <= muxS:inst5.F4
-S5 <= muxS:inst5.F5
-S6 <= muxS:inst5.F6
-S7 <= muxS:inst5.F7
+LEDR[0] <= muxS:inst5.F0
+LEDR[1] <= muxS:inst5.F1
+LEDR[2] <= muxS:inst5.F2
+LEDR[3] <= muxS:inst5.F3
+LEDR[4] <= muxS:inst5.F4
+LEDR[5] <= muxS:inst5.F5
+LEDR[6] <= muxS:inst5.F6
+LEDR[7] <= muxS:inst5.F7
+SW[0] => 4Bit_Adder-Subtractor:inst3.B0
+SW[0] => 4Bit_Multiplier:inst4.B0
+SW[1] => 4Bit_Adder-Subtractor:inst3.B1
+SW[1] => 4Bit_Multiplier:inst4.B1
+SW[2] => 4Bit_Adder-Subtractor:inst3.B2
+SW[2] => 4Bit_Multiplier:inst4.B2
+SW[3] => 4Bit_Adder-Subtractor:inst3.B3
+SW[3] => 4Bit_Multiplier:inst4.B3
+SW[4] => muxS:inst5.OPT
+SW[5] => 4Bit_Adder-Subtractor:inst3.OPT
+SW[6] => 4Bit_Adder-Subtractor:inst3.A0
+SW[6] => 4Bit_Multiplier:inst4.A0
+SW[7] => 4Bit_Adder-Subtractor:inst3.A1
+SW[7] => 4Bit_Multiplier:inst4.A1
+SW[8] => 4Bit_Adder-Subtractor:inst3.A2
+SW[8] => 4Bit_Multiplier:inst4.A2
+SW[9] => 4Bit_Adder-Subtractor:inst3.A3
+SW[9] => 4Bit_Multiplier:inst4.A3
 
 
 |ULA|muxS:inst5
@@ -140,6 +136,10 @@ OPT => Adder:inst3.Cin
 OPT => mux2:inst18.OPT
 OPT => mux2:inst20.OPT
 OPT => mux2:inst22.OPT
+OPT => mux2:inst24.OPT
+OPT => mux2:inst26.OPT
+OPT => mux2:inst28.OPT
+OPT => mux2:inst30.OPT
 S1 <= Adder:inst2.S
 A1 => Adder:inst2.A
 B1 => mux2:inst18.E0
@@ -152,10 +152,10 @@ S3 <= Adder:inst.S
 A3 => Adder:inst.A
 B3 => mux2:inst22.E0
 B3 => inst23.IN0
-S4 <= Adder:inst.Cout
-S5 <= <GND>
-S6 <= <GND>
-S7 <= <GND>
+S4 <= Adder:inst7.S
+S5 <= Adder:inst6.S
+S6 <= Adder:inst4.S
+S7 <= Adder:inst5.S
 
 
 |ULA|4Bit_Adder-Subtractor:inst3|Adder:inst3
@@ -234,50 +234,80 @@ OPT => inst2.IN0
 E0 => inst.IN1
 
 
-|ULA|Coder:inst1
-B0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-D1 => inst1.IN0
-D5 => inst1.IN1
-D5 => inst5.IN3
-D9 => inst.IN0
-D9 => inst3.IN0
-D7 => inst.IN1
-D7 => inst4.IN2
-D7 => inst5.IN2
-D3 => inst1.IN3
-D3 => inst4.IN3
-B1 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-D2 => inst4.IN0
-D6 => inst4.IN1
-D6 => inst5.IN1
-B2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-D4 => inst5.IN0
-B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-D8 => inst3.IN1
-D0 => ~NO_FANOUT~
+|ULA|4Bit_Adder-Subtractor:inst3|Adder:inst7
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst3.IN0
+B => inst1.IN1
+B => inst3.IN1
+Cin => inst.IN1
+Cin => inst4.IN0
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ULA|Coder:inst
-B0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-D1 => inst1.IN0
-D5 => inst1.IN1
-D5 => inst5.IN3
-D9 => inst.IN0
-D9 => inst3.IN0
-D7 => inst.IN1
-D7 => inst4.IN2
-D7 => inst5.IN2
-D3 => inst1.IN3
-D3 => inst4.IN3
-B1 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-D2 => inst4.IN0
-D6 => inst4.IN1
-D6 => inst5.IN1
-B2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-D4 => inst5.IN0
-B3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-D8 => inst3.IN1
-D0 => ~NO_FANOUT~
+|ULA|4Bit_Adder-Subtractor:inst3|mux2:inst24
+F <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+E1 => inst1.IN0
+OPT => inst1.IN1
+OPT => inst2.IN0
+E0 => inst.IN1
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|Adder:inst6
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst3.IN0
+B => inst1.IN1
+B => inst3.IN1
+Cin => inst.IN1
+Cin => inst4.IN0
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|mux2:inst26
+F <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+E1 => inst1.IN0
+OPT => inst1.IN1
+OPT => inst2.IN0
+E0 => inst.IN1
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|Adder:inst4
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst3.IN0
+B => inst1.IN1
+B => inst3.IN1
+Cin => inst.IN1
+Cin => inst4.IN0
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|mux2:inst28
+F <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+E1 => inst1.IN0
+OPT => inst1.IN1
+OPT => inst2.IN0
+E0 => inst.IN1
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|Adder:inst5
+S <= inst.DB_MAX_OUTPUT_PORT_TYPE
+A => inst1.IN0
+A => inst3.IN0
+B => inst1.IN1
+B => inst3.IN1
+Cin => inst.IN1
+Cin => inst4.IN0
+Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA|4Bit_Adder-Subtractor:inst3|mux2:inst30
+F <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+E1 => inst1.IN0
+OPT => inst1.IN1
+OPT => inst2.IN0
+E0 => inst.IN1
 
 
 |ULA|4Bit_Multiplier:inst4

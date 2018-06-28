@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ULA
-Mon Jun 04 22:38:38 2018
+Thu Jun 28 18:29:06 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Jun 04 22:38:38 2018 ;
+; EDA Netlist Writer Status ; Successful - Thu Jun 28 18:29:06 2018 ;
 ; Revision Name             ; ULA                                   ;
 ; Top-level Entity Name     ; ULA                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -50,8 +50,7 @@ applicable agreement for further details.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate netlist for functional simulation only                                                   ; Off                       ;
-; Time scale                                                                                        ; 1 ps                      ;
+; Generate netlist for functional simulation only                                                   ; On                        ;
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -66,16 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+---------------------------------------------------------------------+
-; Simulation Generated Files                                          ;
-+---------------------------------------------------------------------+
-; Generated Files                                                     ;
-+---------------------------------------------------------------------+
-; E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/ULA.vo         ;
-; E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/ULA_fast.vo    ;
-; E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/ULA_v.sdo      ;
-; E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/ULA_v_fast.sdo ;
-+---------------------------------------------------------------------+
++-------------------------------------------------------------+
+; Simulation Generated Files                                  ;
++-------------------------------------------------------------+
+; Generated Files                                             ;
++-------------------------------------------------------------+
+; E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/ULA.vo ;
++-------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jun 04 22:38:37 2018
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ULA -c ULA
-Info (204026): Generated files "ULA.vo", "ULA_fast.vo", "ULA_v.sdo" and "ULA_v_fast.sdo" in directory "E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/" for EDA simulation tool
+    Info: Processing started: Thu Jun 28 18:29:06 2018
+Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog ULA -c ULA
+Info (204019): Generated file ULA.vo in folder "E:/Documentos/GIT/CD/Calculadora/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4543 megabytes
-    Info: Processing ended: Mon Jun 04 22:38:38 2018
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 4539 megabytes
+    Info: Processing ended: Thu Jun 28 18:29:06 2018
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
