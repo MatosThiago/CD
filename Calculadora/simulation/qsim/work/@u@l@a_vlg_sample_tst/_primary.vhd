@@ -2,7 +2,16 @@ library verilog;
 use verilog.vl_types.all;
 entity ULA_vlg_sample_tst is
     port(
-        SW              : in     vl_logic_vector(9 downto 0);
+        A0              : in     vl_logic;
+        A1              : in     vl_logic;
+        A2              : in     vl_logic;
+        A3              : in     vl_logic;
+        B0              : in     vl_logic;
+        B1              : in     vl_logic;
+        B2              : in     vl_logic;
+        B3              : in     vl_logic;
+        OPT0            : in     vl_logic;
+        OPT1            : in     vl_logic;
         sampler_tx      : out    vl_logic
     );
 end ULA_vlg_sample_tst;

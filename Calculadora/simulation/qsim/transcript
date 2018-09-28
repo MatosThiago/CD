@@ -25,5 +25,5 @@
 # Loading work.ULA_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
 # Simulation passed !
-# ** Note: $finish    : ULA.vt(281)
+# ** Note: $finish    : ULA.vt(355)
 #    Time: 1 us  Iteration: 0  Instance: /ULA_vlg_vec_tst/tb_out
